@@ -9,14 +9,50 @@
   font-size: 36px
   color: $white
 
+  @media (max-width: $screen-desktop)
+    width: 160px
+    height: 270px
+
+    &:nth-of-type(3n+1)
+      grid-column-start: 2
+      grid-column-end: 3
+      grid-row-start: 1
+      grid-row-end: 4
+
+    &:nth-of-type(3n+2)
+      grid-column-start: 1
+      grid-column-end: 2
+      grid-row-start: 2
+      grid-row-end: 5
+
+    &:nth-of-type(3n)
+      grid-column-start: 3
+      grid-column-end: 4
+      grid-row-start: 2
+      grid-row-end: 5
+
+  @media (max-width: $screen-tablet)
+    width: 240px
+    height: 380px
+    margin: 0 auto
+
+    &:nth-of-type(n)
+      grid-column-start: auto
+      grid-column-end: auto
+      grid-row-start: auto
+      grid-row-end: auto
+
   &__card-wrapper
     margin-bottom: 14px
+
+    @media (max-width: $screen-desktop)
+      margin-bottom: 0.222rem
 
   &__card
     position: relative
 
     box-sizing: border-box
-    width: 320px
+    width: 100%
     height: 480px
 
     font:
@@ -28,6 +64,16 @@
     background:
       color: $main-blue
     cursor: pointer
+
+    @media (max-width: $screen-desktop)
+      height: 240px
+
+      clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)
+
+    @media (max-width: $screen-tablet)
+      height: 360px
+
+      clip-path: polygon(34px 0, 100% 0, 100% 100%, 0 100%, 0 34px)
 
     &--hovered
       background:
@@ -64,11 +110,35 @@
       color: $card-bg
       image: url("./bg.png")
       size: 368px 360px
-      position:center 208px
+      position:center 204px
       repeat: no-repeat
       clip: padding-box
 
     pointer-events: none
+
+    @media (max-width: $screen-desktop)
+      width: 152px
+      height: 233px
+      padding-top: 10.5px
+      padding-left: 24px
+
+      clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px)
+
+      background: 
+        size: 186px 182px
+        position: center 102px
+
+    @media (max-width: $screen-tablet)
+      width: 232px
+      height: 352px
+      padding-top: 15px
+      padding-left: 36px
+
+      clip-path: polygon(31px 0, 100% 0, 100% 100%, 0 100%, 0 31px)
+
+      background: 
+        size: 276px 270px
+        position: center 152px
 
     &--no-available
       background:
@@ -76,13 +146,37 @@
         size: 100% 100%, 368px 360px
         position: top left, center 208px
 
-  &__card-promo
-    margin-bottom: 7px
+      @media (max-width: $screen-desktop)
+        background:
+          image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("./bg.png")
+          size: 100% 100%, 186px 182px
+          position: top left, center 102px        
 
+      @media (max-width: $screen-tablet)
+        background:
+          image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("./bg.png")
+          size: 100% 100%, 276px 270px
+          position: top left, center 152px
+
+  &__card-promo
+    margin-bottom: 0.6rem
+
+    color: $dark-grey
     font:
       size: 16px
 
     pointer-events: none
+
+    @media (max-width: $screen-desktop)
+      margin-bottom: 0.2rem
+
+      font-size: 0.44rem
+
+    @media (max-width: $screen-tablet)
+      margin-bottom: 0.5rem
+
+      font: 
+        size: 0.75rem
 
     &--no-available
       color: $card-no-available
@@ -97,6 +191,14 @@
     pointer: none
     pointer-events: none
 
+    @media (max-width: $screen-desktop)
+      font: 
+        size: 1.333rem
+
+    @media (max-width: $screen-tablet)
+      font:
+        size: 2.25rem
+
     &--no-available
       color: $card-no-available
 
@@ -109,6 +211,19 @@
 
     pointer-events: none
 
+    @media (max-width: $screen-desktop)
+      margin-bottom: 0.5rem
+
+      font:
+        size: 0.667rem
+
+    @media (max-width: $screen-tablet)
+      margin-bottom: 0.85rem
+
+      font:
+        size: 1rem
+   
+
     &--no-available
       color: $card-no-available
 
@@ -118,6 +233,14 @@
     font:
       size: 14px
     color: $dark-grey
+
+    @media (max-width: $screen-desktop)
+      font:
+        size: 0.45rem
+
+    @media (max-width: $screen-tablet)
+      font:
+        size: 0.667rem
 
     &--no-available
       color: $card-no-available
@@ -146,6 +269,16 @@
     background:
       color: $main-blue
 
+    @media (max-width: $screen-desktop)
+      right: 0.444rem
+      bottom: 0.444rem
+
+      width: 2.222rem
+      height: 2.222rem
+
+      font:
+        size: 0.555rem
+
     &--hovered
       background:
         color: $hover-blue
@@ -166,20 +299,37 @@
     font:
       size: 42px
 
+    @media (max-width: $screen-desktop)
+      font:
+        size: 1.167rem
+
   &__underline
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 17px
+
     font:
       family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif
       size: 13px
       weight: 400
     color: $white
     text-align: center
+    line-height: 15px
+
+    @media (max-width: $screen-desktop)
+      font:
+        size: 0.6rem
 
     &--no-available
       color: $underline-no-available
 
   &__btn
-    display: inline
-    padding: 0
+    display: inline-block
+    align-self: top
+    padding: 0 0 1px 0
+
+    line-height: 16px
 
     border: 2px transparent
     background: transparent
@@ -202,6 +352,10 @@
 
     pointer-events: none
 
+    @media (max-width: $screen-desktop)
+      font:
+        size: 0.6rem
+
     &--hovered
       color: $hover-blue
 
@@ -215,6 +369,10 @@
     color: $main-blue
 
     pointer-events: none
+
+    @media (max-width: $screen-desktop)
+      font:
+        size: 0.6rem
 
     &--hovered
       color: $hover-blue

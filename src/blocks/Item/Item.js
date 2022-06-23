@@ -179,7 +179,7 @@ function Item(props) {
       }
       {(!isSelected && props.isAvailable) && 
         <p className="item__underline">
-          Чего сидишь? Порадуй котэ,&nbsp;
+          <span className="item__underline-text">Чего сидишь? Порадуй котэ,&nbsp;</span>
           <button className="item__btn" onMouseOver={addClass} onMouseLeave={removeClass} onClick={switchIsSelected}>
             <span className="item__btn-text">купи</span>
             <span className="item__btn-dot">.</span>
