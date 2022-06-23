@@ -1,0 +1,220 @@
+@import "../../Sass/_reset.sass"
+@import "../../Sass/_variables.sass"
+@import "../../Sass/_fonts.sass"
+
+.item
+  width: 320px
+  height: 509px
+
+  font-size: 36px
+  color: $white
+
+  &__card-wrapper
+    margin-bottom: 14px
+
+  &__card
+    position: relative
+
+    box-sizing: border-box
+    width: 320px
+    height: 480px
+
+    font:
+      family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif
+    color: $black
+
+    clip-path: polygon(45px 0, 100% 0, 100% 100%, 0 100%, 0 45px)
+    border-radius: 12px
+    background:
+      color: $main-blue
+    cursor: pointer
+
+    &--hovered
+      background:
+        color: $hover-blue
+
+    &--selected
+      background:
+        color: $main-magenta
+
+    &--selected-hovered
+      background:
+        color: $hover-magenta
+
+    &--no-available
+      background:
+        color: $card-no-available
+
+      pointer-events: none
+
+  &__card-inner
+    position: absolute
+    top: 4px
+    left: 4px
+
+    box-sizing: border-box
+    width: 312px
+    height: 472px
+    padding-top: 21px
+    padding-left: 48px
+
+    clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px)
+    border-radius: 8px
+    background:
+      color: $card-bg
+      image: url("./bg.png")
+      size: 368px 360px
+      position:center 208px
+      repeat: no-repeat
+      clip: padding-box
+
+    pointer-events: none
+
+    &--no-available
+      background:
+        image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("./bg.png")
+        size: 100% 100%, 368px 360px
+        position: top left, center 208px
+
+  &__card-promo
+    margin-bottom: 7px
+
+    font:
+      size: 16px
+
+    pointer-events: none
+
+    &--no-available
+      color: $card-no-available
+
+  &__card-title
+    margin-bottom: 2px
+
+    font:
+      size: 48px
+      weight: 700
+
+    pointer: none
+    pointer-events: none
+
+    &--no-available
+      color: $card-no-available
+
+  &__card-taste
+    margin-bottom: 18px
+
+    font:
+      size: 24px
+      weight: 700
+
+    pointer-events: none
+
+    &--no-available
+      color: $card-no-available
+
+  &__card-text
+    margin-bottom: 2px
+
+    font:
+      size: 14px
+    color: $dark-grey
+
+    &--no-available
+      color: $card-no-available
+
+  &__card-text-number
+    font:
+      weight: 700
+
+  &__card-value-container
+    position: absolute
+    right: 16px
+    bottom: 16px
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 80px
+    height: 80px
+
+    font:
+      size: 21px
+    color: $white
+
+    border-radius: 50%
+    background:
+      color: $main-blue
+
+    &--hovered
+      background:
+        color: $hover-blue
+
+    &--selected
+      background:
+        color: $main-magenta
+
+    &--selected-hovered
+      background:
+        color: $hover-magenta
+
+    &--no-available
+      background:
+        color: $card-no-available
+
+  &__card-value-digits
+    font:
+      size: 42px
+
+  &__underline
+    font:
+      family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif
+      size: 13px
+      weight: 400
+    color: $white
+    text-align: center
+
+    &--no-available
+      color: $underline-no-available
+
+  &__btn
+    display: inline
+    padding: 0
+
+    border: 2px transparent
+    background: transparent
+
+    cursor: pointer
+
+    &--hovered
+      color: $hover-blue
+
+  &__btn-text
+    font:
+      family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif
+      size: 13px
+      weight: 700
+    color: $main-blue
+
+    border: 1px transparent
+    border-bottom: 1px dashed $main-blue
+    background: transparent
+
+    pointer-events: none
+
+    &--hovered
+      color: $hover-blue
+
+      border-bottom: 1px dashed $hover-blue
+
+  &__btn-dot
+    font:
+      family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif
+      size: 13px
+      weight: 700
+    color: $main-blue
+
+    pointer-events: none
+
+    &--hovered
+      color: $hover-blue
