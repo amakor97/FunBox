@@ -315,9 +315,14 @@
       weight: 400
     color: $white
     text-align: center
-    line-height: 15px
+    line-height: 13px
 
     @media (max-width: $screen-desktop)
+      min-height: 19px
+      font:
+        size: 0.4rem
+
+    @media (max-width: $screen-tablet)
       font:
         size: 0.6rem
 
@@ -329,12 +334,18 @@
     align-self: top
     padding: 0 0 1px 0
 
-    line-height: 16px
+    line-height: 13px
 
     border: 2px transparent
     background: transparent
 
     cursor: pointer
+
+    @media (max-width: $screen-desktop)
+      line-height: 6px
+
+    @media (max-width: $screen-tablet)
+      line-height: 9px
 
     &--hovered
       color: $hover-blue
@@ -354,6 +365,10 @@
 
     @media (max-width: $screen-desktop)
       font:
+        size: 0.4rem
+
+    @media (max-width: $screen-tablet)
+      font:
         size: 0.6rem
 
     &--hovered
@@ -372,7 +387,12 @@
 
     @media (max-width: $screen-desktop)
       font:
+        size: 0.4rem
+
+    @media (max-width: $screen-tablet)
+      font:
         size: 0.6rem
+      
 
     &--hovered
       color: $hover-blue
