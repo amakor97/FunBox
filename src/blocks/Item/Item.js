@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 
 import "./_item.sass";
 
-//import Card from "../Card/Card";
-
 function Item(props) {
   const [isSelected, setIsSelected] = useState(false);
   const [isHover, setIsHover] = useState(false);

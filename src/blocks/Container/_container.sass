@@ -5,19 +5,19 @@
 .container
   display: flex
   flex-direction: column
-  gap: 5rem
+  gap: 2.5rem
   padding: 20px 0
 
-  @media (max-width: $screen-desktop)
-    gap: 2.5rem
+  @media (min-width: $screen-desktop)
+    gap: 5rem
 
   &__title
     font:
       family: Exo2_0
-      size: 2rem
+      size: 1.25rem
     color: white
     text-align: center
 
-    @media (max-width: $screen-desktop)
+    @media (min-width: $screen-desktop)
       font:
-        size: 1.25rem
+        size: 2rem
