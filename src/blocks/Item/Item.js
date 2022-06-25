@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./_item.sass";
 
@@ -7,59 +7,38 @@ function Item(props) {
   const [isHover, setIsHover] = useState(false);
   const [allowToHover, setAllowToHover] = useState(true);
 
-  console.log(props.text);
-
-  let allowToHover2 = false;
-  
-  //console.log({allowToHover});
-
-  useEffect(() => {
-    
-  })
 
   const switchIsSelected = (e) => {
-    //console.log({isSelected});
-    setIsSelected(!isSelected);
-    //console.log({isSelected});
-    setAllowToHover(false);
 
     let card = e.target.parentNode.parentNode.querySelector(".item__card");
     let valueCont = card.querySelector(".item__card-value-container");
 
     if (!isSelected) {
       card.classList.add("item__card--selected");
-      card.classList.remove("item__card--hovered");
       valueCont.classList.add("item__card-value-container--selected");
+      
+      card.classList.remove("item__card--hovered");
       valueCont.classList.remove("item__card-value-container--hovered");
-      setAllowToHover(false);
-      allowToHover2 = true;
-      setIsHover(false);
-      //console.log(allowToHover2);
     } else {
-      card.classList.remove("item__card--selected");
-      valueCont.classList.remove("item__card-value-container--selected");
-      card.classList.remove("item__card--selected-hovered");
-      valueCont.classList.remove("item__card-value-container--selected-hovered");
-      setAllowToHover(false);
-      setIsHover(false);
+      card.classList.remove("item__card--selected",
+        "item__card--selected-hovered");
+      valueCont.classList.remove("item__card-value-container--selected",
+        "item__card-value-container--selected-hovered");
     }
 
+    setIsSelected(!isSelected);
     setAllowToHover(false);
-    //console.log({allowToHover}, "end of switching");
+    setIsHover(false);
   }
 
   function addClass(e) {
-    //console.log("adding classes...", {allowToHover, isSelected});
     if (allowToHover) {
-      //console.log("changing isHover to 'true'", {allowToHover, isSelected});
       setIsHover(true);
+    }
 
-    }
-    if (e.target.classList.contains("item__card-inner")) {
-      return;
-    }
     let card = e.target.parentNode.parentNode.querySelector(".item__card");
     let valueCont = card.querySelector(".item__card-value-container");
+
     if (!isSelected && allowToHover) {
       card.classList.add("item__card--hovered");
       valueCont.classList.add("item__card-value-container--hovered");
@@ -81,20 +60,13 @@ function Item(props) {
   }
 
   function removeClass(e) {
-    //console.log("changing isHover to 'false'", {allowToHover, isSelected});
     setIsHover(false);
     if (e.target.classList.contains("item__card-inner")) {
       return;
     }
     setAllowToHover(true);
-    allowToHover2 = true;
-    //console.log(allowToHover2);
-    //console.log(e);
-    //console.log(e.target);
     let card = e.target.parentNode.parentNode.querySelector(".item__card");
     let valueCont = card.querySelector(".item__card-value-container");
-    //console.log(card);
-    //console.log(valueCont);
     card.classList.remove("item__card--hovered");
     valueCont.classList.remove("item__card-value-container--hovered");
    
@@ -113,12 +85,6 @@ function Item(props) {
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
   }
-
-  function stopProp(e) {
-    e.stopPropagation();
-    e.nativeEvent.stopImmediatePropagation();
-  }
-
  
 
   return(
@@ -142,13 +108,9 @@ function Item(props) {
             {
               props.text.map(function(line, index) {
                 let num = parseInt(line);
-                console.log({num});
                 if (!Number.isNaN(num)) {
                   let len = num.toString().length;
-                  console.log({len});
-                  console.log(typeof(line));
                   line = line.slice(len);
-                  console.log({line});
                 }
 
                 return(
