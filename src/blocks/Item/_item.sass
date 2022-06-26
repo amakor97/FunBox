@@ -1,5 +1,5 @@
 @import "../../Sass/_reset.sass"
-@import "../../Sass/_root.sass"
+//@import "../../Sass/_root.sass"
 @import "../../Sass/_variables.sass"
 @import "../../Sass/_fonts.sass"
 
@@ -39,6 +39,12 @@
   @media (min-width: $screen-desktop)
     font:
       size: 21px
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) 
+    margin-right: 225px
+
+    &:last-of-type
+      margin-right: 0
 
   &__card-wrapper
     margin-bottom: 0.6em

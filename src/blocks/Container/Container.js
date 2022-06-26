@@ -1,6 +1,7 @@
 import "./_container.sass";
+
 import Wrapper from "../Wrapper/Wrapper";
-import Item from "../Item/Item";
+
 
 function Container() {
   return(

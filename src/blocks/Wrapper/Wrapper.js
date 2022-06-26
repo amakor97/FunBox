@@ -5,7 +5,6 @@ import Item from "../Item/Item";
 import data from "../../data.json";
 
 function Wrapper() {
-  console.log(data);
   return(
     <div className="wrapper">
       {
