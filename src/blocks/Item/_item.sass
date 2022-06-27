@@ -8,14 +8,15 @@
   margin: 0 auto
 
   &:nth-of-type(n)
-    -ms-grid-column: 1
     grid-column-start: auto
-    -ms-grid-column-span: 1
     grid-column-end: auto
     grid-row-start: auto
     grid-row-end: auto
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    &:nth-of-type(n)
+      -ms-grid-column: 1
+      -ms-grid-column-span: 1
 
     &:nth-of-type(3n+1)
       -ms-grid-row: 1
@@ -34,41 +35,48 @@
       size: 10.333px
 
     &:nth-of-type(3n+1)
-      -ms-grid-column: 2
       grid-column-start: 2
-      -ms-grid-column-span: 1
       grid-column-end: 3
-      -ms-grid-row: 1
       grid-row-start: 1
-      -ms-grid-row-span: 3
       grid-row-end: 4
 
     &:nth-of-type(3n+2)
-      -ms-grid-column: 1
       grid-column-start: 1
-      -ms-grid-column-span: 1
       grid-column-end: 2
-      -ms-grid-row: 2
       grid-row-start: 2
-      -ms-grid-row-span: 3
       grid-row-end: 5
 
     &:nth-of-type(3n)
-      -ms-grid-column: 3
       grid-column-start: 3
-      -ms-grid-column-span: 1
       grid-column-end: 4
-      -ms-grid-row: 2
       grid-row-start: 2
-      -ms-grid-row-span: 3
       grid-row-end: 5
+
+  @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    &:nth-of-type(3n+1)
+      -ms-grid-column: 2
+      -ms-grid-column-span: 1
+      -ms-grid-row: 1
+      -ms-grid-row-span: 3
+
+    &:nth-of-type(3n+2)
+      -ms-grid-column: 1
+      -ms-grid-column-span: 1
+      -ms-grid-row: 2
+      -ms-grid-row-span: 3
+
+    &:nth-of-type(3n)
+      -ms-grid-column: 3
+      -ms-grid-column-span: 1
+      -ms-grid-row: 2
+      -ms-grid-row-span: 3
 
   @media (min-width: $screen-desktop)
     font:
       size: 21px
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) 
-    margin: 0 0 40px
+    margin: 0 auto 40px
 
   @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active) 
     margin: 0 20px
@@ -281,7 +289,7 @@
     display: inline-block
     padding: 0 0 0 0
 
-    line-height: 0.5625em
+    //line-height: 0.5625em
 
     //font-size: 0
     
