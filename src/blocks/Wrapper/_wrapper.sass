@@ -3,15 +3,22 @@
 
 
 .wrapper
+  display: -ms-grid
   display: grid
   gap: 40px
+  -ms-grid-columns: 1fr
   grid-template-columns: 1fr
+  -ms-grid-rows: 1fr 1fr 1fr
   grid-template-rows: 1fr 1fr 1fr
   
   @media (min-width: $screen-tablet)
+    -ms-grid-columns: 1fr 1fr 1fr
     grid-template-columns: 1fr 1fr 1fr
+    -ms-grid-rows: 1fr 1fr 1fr 1fr
     grid-template-rows: 1fr 1fr 1fr 1fr
 
   @media (min-width: $screen-desktop)
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
     gap: 80px 

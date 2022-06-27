@@ -154,7 +154,7 @@ function Item(props) {
       }
 
       {(!isSelected && props.isAvailable) && 
-        <p className="item__underline">
+        <div className="item__underline">
           <span className="item__underline-text">
             Чего сидишь? Порадуй котэ,&nbsp;
             </span>
@@ -166,10 +166,12 @@ function Item(props) {
             <span className="item__btn-text">купи</span>
             <span className="item__btn-dot">.</span>
           </button>
-        </p>
+        </div>
       }
       {(isSelected && props.isAvailable) &&
-        <p className="item__underline">{props.description}</p>
+        <div className="item__underline">
+          <p className="item__underline-text">{props.description}</p>
+        </div>
       }
     </div>
   );
