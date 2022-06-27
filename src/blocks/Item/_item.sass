@@ -7,82 +7,83 @@
   height: 23.75em
   margin: 0 auto
 
-  &:nth-of-type(n)
-    grid-column-start: auto
-    grid-column-end: auto
-    grid-row-start: auto
-    grid-row-end: auto
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) 
+    margin: 0 auto 40px
 
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
-    &:nth-of-type(n)
-      -ms-grid-column: 1
-      -ms-grid-column-span: 1
-
-    &:nth-of-type(3n+1)
-      -ms-grid-row: 1
-      -ms-grid-row-span: 1
-
-    &:nth-of-type(3n+2)
-      -ms-grid-row: 2
-      -ms-grid-row-span: 1
-
-    &:nth-of-type(3n)
-      -ms-grid-row: 3
-      -ms-grid-row-span: 1
-      
   @media (min-width: $screen-tablet)
     font:
       size: 10.333px
 
-    &:nth-of-type(3n+1)
-      grid-column-start: 2
-      grid-column-end: 3
-      grid-row-start: 1
-      grid-row-end: 4
-
-    &:nth-of-type(3n+2)
-      grid-column-start: 1
-      grid-column-end: 2
-      grid-row-start: 2
-      grid-row-end: 5
-
-    &:nth-of-type(3n)
-      grid-column-start: 3
-      grid-column-end: 4
-      grid-row-start: 2
-      grid-row-end: 5
-
-  @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active)
-    &:nth-of-type(3n+1)
-      -ms-grid-column: 2
-      -ms-grid-column-span: 1
-      -ms-grid-row: 1
-      -ms-grid-row-span: 3
-
-    &:nth-of-type(3n+2)
-      -ms-grid-column: 1
-      -ms-grid-column-span: 1
-      -ms-grid-row: 2
-      -ms-grid-row-span: 3
-
-    &:nth-of-type(3n)
-      -ms-grid-column: 3
-      -ms-grid-column-span: 1
-      -ms-grid-row: 2
-      -ms-grid-row-span: 3
+  @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active) 
+    margin: 0 20px
 
   @media (min-width: $screen-desktop)
     font:
       size: 21px
 
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) 
-    margin: 0 auto 40px
-
-  @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active) 
-    margin: 0 20px
-
   @media (min-width: $screen-desktop) and (-ms-high-contrast: none), (-ms-high-contrast: active) 
     margin: 0 40px
+
+  &:nth-of-type(n)
+    grid-column-start: auto
+    grid-column-end: auto
+    grid-row-start: auto
+    grid-row-end: auto
+  
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-column: 1
+      -ms-grid-column-span: 1
+
+  &:nth-of-type(3n+1)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-row: 1
+      -ms-grid-row-span: 1
+
+    @media (min-width: $screen-tablet)
+      grid-column-start: 2
+      grid-column-end: 3
+      grid-row-start: 1
+      grid-row-end: 4
+
+    @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-column: 2
+      -ms-grid-column-span: 1
+      -ms-grid-row: 1
+      -ms-grid-row-span: 3
+
+  &:nth-of-type(3n+2)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-row: 2
+      -ms-grid-row-span: 1
+
+    @media (min-width: $screen-tablet)
+      grid-column-start: 1
+      grid-column-end: 2
+      grid-row-start: 2
+      grid-row-end: 5
+
+    @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-column: 1
+      -ms-grid-column-span: 1
+      -ms-grid-row: 2
+      -ms-grid-row-span: 3
+
+  &:nth-of-type(3n)
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-row: 3
+      -ms-grid-row-span: 1
+
+    @media (min-width: $screen-tablet)
+      grid-column-start: 3
+      grid-column-end: 4
+      grid-row-start: 2
+      grid-row-end: 5
+
+    @media (min-width: $screen-tablet) and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      -ms-grid-column: 3
+      -ms-grid-column-span: 1
+      -ms-grid-row: 2
+      -ms-grid-row-span: 3
 
   &__card-wrapper
     margin-bottom: 0.6em
@@ -277,10 +278,8 @@
     font:
       size: 0.6em
 
-    
-
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
-      height: 24px
+      height: 1.5em
 
     &--no-available
       color: $underline-no-available
@@ -288,12 +287,6 @@
   &__btn
     display: inline-block
     padding: 0 0 0 0
-
-    //line-height: 0.5625em
-
-    //font-size: 0
-    
-
 
     border: 2px transparent
     background: transparent
